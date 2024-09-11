@@ -4,11 +4,10 @@ PORT=$2
 CHAT=$3
 
 # clone Odoo directory
-git clone --depth=1 https://github.com/minhng92/odoo-17-docker-compose $DESTINATION
+git clone --depth=1 https://github.com/yasseribrahim740/odoo-17.git $DESTINATION
 rm -rf $DESTINATION/.git
 
 # set permission
-mkdir -p $DESTINATION/postgresql
 sudo chmod -R 777 $DESTINATION
 
 # Check if running on macOS
@@ -37,6 +36,6 @@ else
 fi
 
 # run Odoo
-docker-compose -f $DESTINATION/docker-compose.yml up -d
+docker compose -f $DESTINATION/docker-compose.yml up -d
 
-echo 'Started Odoo @ http://localhost:'$PORT' | Master Password: minhng.info | Live chat port: '$CHAT
+echo 'Started Odoo @ http://localhost:'$PORT' | Master Password: 3ke6lsd02mb467sfg| Live chat port: '$CHAT
